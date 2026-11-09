@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b14">
+  <title>Infinite Ascension</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">∞</span><div><strong>INFINITE ASCENSION</strong><small>THE END IS NOT AN OPTION</small></div></div>
+      <div class="top-actions">
+        <span class="save-state" id="saveState">● SAUVEGARDE ACTIVE</span>
+        <button class="ghost-btn" id="resetBtn" title="Recommencer">Réinitialiser</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> ASCENSION EN COURS</div>
+      <div class="level-line"><div><span class="muted-label">NIVEAU ACTUEL</span><h1 id="level">1</h1></div><div class="rank-box"><span class="muted-label">RANG</span><strong id="rank">NOVICE</strong></div></div>
+      <div class="xp-meta"><span>EXPÉRIENCE</span><span id="xpText">0 / 100 XP</span></div>
+      <div class="bar"><div id="xpBar" class="bar-fill xp-fill"></div></div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card"><span class="stat-icon">❤</span><div><small>POINTS DE VIE</small><strong id="hpText">100 / 100</strong></div><div class="mini-bar"><i id="hpBar"></i></div></article>
+      <article class="stat-card"><span class="stat-icon">⚔</span><div><small>ATTAQUE</small><strong id="attackText">12</strong></div></article>
+      <article class="stat-card"><span class="stat-icon">✦</span><div><small>CRISTAUX</small><strong id="goldText">0</strong></div></article>
+      <article class="stat-card"><span class="stat-icon">☠</span><div><small>ENNEMIS VAINCUS</small><strong id="killsText">0</strong></div></article>
+    </section>
+
+    <section class="battle-layout">
+      <article class="panel enemy-panel">
+        <div class="panel-heading"><div><span class="section-kicker">RENCONTRE</span><h2 id="enemyName">Sentinelle oubliée</h2></div><span class="enemy-level" id="enemyLevel">NIV. 1</span></div>
+        <div class="enemy-stage">
+          <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+          <div class="enemy-core" id="enemyArt"><span>✧</span></div>
+          <div class="stage-caption" id="enemyType">ENNEMI COMMUN</div>
+        </div>
+        <div class="enemy-hp-label"><span>INTÉGRITÉ DE L'ENNEMI</span><strong id="enemyHpText">35 / 35</strong></div>
+        <div class="bar enemy-bar"><div id="enemyHpBar" class="bar-fill enemy-fill"></div></div>
+        <div class="battle-log" id="battleLog" aria-live="polite">Une présence hostile bloque ton ascension.</div>
+        <div class="combat-actions">
+          <button class="primary-btn" id="attackBtn"><span>⚔</span> ATTAQUER <kbd>ESPACE</kbd></button>
+          <button class="secondary-btn" id="specialBtn">✦ Frappe spéciale <small id="specialCost">Coût : 30 énergie</small></button>
+          <button class="secondary-btn heal-btn" id="potionBtn">✚ Potion <small id="potionCount">3 disponibles</small></button>
+        </div>
+      </article>
+
+      <aside class="side-column">
+        <article class="panel upgrade-panel">
+          <div class="panel-heading"><div><span class="section-kicker">PROGRESSION</span><h2>Améliorations</h2></div><span class="tiny-tag">PERMANENT</span></div>
+          <div class="upgrade-row"><div class="upgrade-symbol">⚔</div><div class="upgrade-info"><strong>Force accrue</strong><small>+5 attaque par rang</small><small id="attackUpgradeLevel">Rang 0</small></div><button class="buy-btn" id="buyAttack">50 ◈</button></div>
+          <div class="upgrade-row"><div class="upgrade-symbol">❤</div><div class="upgrade-info"><strong>Vitalité</strong><small>+25 PV maximum</small><small id="hpUpgradeLevel">Rang 0</small></div><button class="buy-btn" id="buyHp">50 ◈</button></div>
+          <div class="upgrade-row"><div class="upgrade-symbol">✦</div><div class="upgrade-info"><strong>Réserve d'énergie</strong><small>+10 énergie max</small><small id="energyUpgradeLevel">Rang 0</small></div><button class="buy-btn" id="buyEnergy">75 ◈</button></div>
+        </article>
+        <article class="panel run-panel">
+          <div class="panel-heading"><div><span class="section-kicker">TON PARCOURS</span><h2>Statistiques</h2></div></div>
+          <div class="run-stat"><span>Meilleur niveau</span><strong id="bestText">1</strong></div>
+          <div class="run-stat"><span>Boss vaincus</span><strong id="bossText">0</strong></div>
+          <div class="run-stat"><span>Énergie</span><strong id="energyText">100 / 100</strong></div>
+          <div class="run-stat"><span>Potions</span><strong id="potionStat">3</strong></div>
+          <p class="infinite-note">Il n'existe aucun dernier étage. Chaque victoire ouvre la porte du suivant.</p>
+        </article>
+      </aside>
+    </section>
+    <footer><span>INFINITE ASCENSION <b>© 2026</b></span><span>UNE ASCENSION SANS LIMITE <b>∞</b></span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
